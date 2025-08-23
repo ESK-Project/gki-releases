@@ -33,7 +33,7 @@ Flash with your favorite kernel flasher (FKM, Kernel Flasher, Horizon, …).
 ## Builds
 
 All builds are produced by the kernel builder:
-[`bachnxuan/gki_kernel_builder`](https://github.com/ESK-Project/gki_kernel_builder)
+[`ESK-Project/gki_kernel_builder`](https://github.com/ESK-Project/gki_kernel_builder)
 
 ---
 
