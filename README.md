@@ -8,24 +8,42 @@ Custom kernel for **xaga(in)** / **xagapro(in)**. Supports **AOSP** and **HyperO
 
 ## Download
 
-Get the latest **Boot Image** / **AnyKernel3 zip** from the release: [Github Release](https://github.com/ESK-Project/esk-releases/releases/latest)
+Get the latest **AnyKernel3 zip** from the release: [Github Release](https://github.com/ESK-Project/esk-releases/releases/latest)
 
 ---
 
 ## How to flash
 
-1. Userspace (recommeneded)
-- Flash with your favorite kernel flasher (FKM, Kernel Flasher, Horizon, …).
+### 1. Userspace (Recommended)
 
-2. Recovery
-- Reboot to recovery
-- Adb sideload the zip
+Flash directly from Android using any of these kernel flasher apps:
+- **Franco Kernel Manager (FKM)**
+- **Kernel Flasher**
+- **Horizon Kernel Flasher**
+- Or any other compatible tool
+
+### 2. Recovery
+
+1. Reboot your device into **recovery mode**.  
+2. Flash the ZIP using **ADB sideload**:
+  ```bash
+  adb sideload <file.zip>
+  ```
+
+3. Example
+  
+  ```bash
+  adb sideload ESK-5.10.245-SUKI.img
+  ```
 
 ---
 
 ## Builds
 
-All builds are produced by the kernel builder:
+All builds are automatically produced by:
+[`ESK-Project/esk_builder`](https://github.com/ESK-Project/esk_builder)
+
+Older builds (v2.4 and earlier) used:
 [`ESK-Project/gki_kernel_builder`](https://github.com/ESK-Project/gki_kernel_builder)
 
 ---
