@@ -14,19 +14,12 @@ Get the latest **Boot Image** / **AnyKernel3 zip** from the release: [Github Rel
 
 ## How to flash
 
-### Fastboot (Boot Image)
+1. Userspace (recommeneded)
+- Flash with your favorite kernel flasher (FKM, Kernel Flasher, Horizon, …).
 
-> [!NOTE]
-> You may need to flash to `boot_a` / `boot_b` according to your current slot.
-
-```sh
-fastboot flash boot <boot.img>
-fastboot reboot
-```
-
-### AnyKernel3 (Recommended)
-
-Flash with your favorite kernel flasher (FKM, Kernel Flasher, Horizon, …).
+2. Recovery
+- Reboot to recovery
+- Adb sideload the zip
 
 ---
 
