@@ -41,7 +41,7 @@ Flash directly from Android using any of these kernel flasher apps:
 ## Builds
 
 All builds are automatically produced by:
-[`ESK-Project/esk_builder@gki`]([https://github.com/ESK-Project/esk_builder](https://github.com/ESK-Project/esk_builder/tree/gki))
+[`ESK-Project/esk_builder@gki`](https://github.com/ESK-Project/esk_builder/tree/gki)
 
 ---
 
