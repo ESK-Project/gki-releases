@@ -1,14 +1,14 @@
-# ESK Kernel Release Repo
+# Generic ESK Kernel Release Repo
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ESK-Project/gki_kernel_builder/release.yml) [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?logo=telegram&logoColor=white)](https://t.me/xaga_kernel)
 
-Custom kernel for **xaga(in)** / **xagapro(in)**. Supports **AOSP** and **HyperOS**.
+An custom android12-5.10 Generic Kernel Image
 
 ---
 
 ## Download
 
-Get the latest **AnyKernel3 zip** from the release: [Github Release](https://github.com/ESK-Project/esk-releases/releases/latest)
+Get the latest **AnyKernel3 zip** from the release: [Github Release](https://github.com/ESK-Project/gki-releases/releases/latest)
 
 ---
 
@@ -41,14 +41,11 @@ Flash directly from Android using any of these kernel flasher apps:
 ## Builds
 
 All builds are automatically produced by:
-[`ESK-Project/esk_builder`](https://github.com/ESK-Project/esk_builder)
-
-Older builds (v2.4 and earlier) used:
-[`ESK-Project/gki_kernel_builder`](https://github.com/ESK-Project/gki_kernel_builder)
+[`ESK-Project/esk_builder@gki`]([https://github.com/ESK-Project/esk_builder](https://github.com/ESK-Project/esk_builder/tree/gki))
 
 ---
 
 ## Notes
 
-* Kernel source is in the [`android_kernel_xiaomi_mt6895`](https://github.com/ESK-Project/android_kernel_xiaomi_mt6895) repo.
+* Kernel source is in the [`android12-5.10-lts`](https://github.com/ESK-Project/android12-5.10-lts) repo.
 * When reporting issues, include device, ROM + Android version, build tag, and logs (dmesg/last\_kmsg).
