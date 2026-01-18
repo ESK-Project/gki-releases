@@ -28,7 +28,7 @@ if [ "$EUID" -ne 0 ]; then
   err "Please run as root."
 fi
 
-if [ -n "${PREFIX:-}" ]; then
+if [ -z "${PREFIX:-}" ]; then
     err "\$PREFIX is not set. Are you running this in Termux?"
 fi
 
