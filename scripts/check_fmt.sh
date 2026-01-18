@@ -24,18 +24,21 @@ install_magiskboot() {
 }
 
 # Check environment
-if [ "$EUID" -ne 0 ]; then
-  err "Please run as root."
-fi
-
 if [ -z "${PREFIX:-}" ]; then
     err "\$PREFIX is not set. Are you running this in Termux?"
 fi
 
-# Check magiskboot existence
+# Check boot image/magiskboot existence
 if ! check_cmd "magiskboot"; then
     check_cmd "curl" || pkg install curl -y
     install_magiskboot
+fi
+
+boot_path="$1"
+if [ -z "${boot_path:-}" ]; then
+    err "boot.img required."
+elif [ ! -f "$boot_path" ]; then
+    err "File '$boot_path' doesn't exist."
 fi
 
 # Setup environment
@@ -43,14 +46,7 @@ rm -rf "$PREFIX/tmp"/* 2>/dev/null
 temp=$(mktemp -d)
 pushd "$temp" >/dev/null || err "pushd failed"
 
-# Get boot image
-boot_path="$temp/boot.img"
-
-slot=$(su -c getprop ro.boot.slot_suffix)
-who=$(whoami)
-dd if="/dev/block/by-name/boot$slot" of="$boot_path" &>/dev/null || err "dd failed"
-chown "$who:$who" "$boot_path"
-
+# Get boot format
 output=$(magiskboot unpack "$boot_path" 2>&1)
 rc=$?
 
