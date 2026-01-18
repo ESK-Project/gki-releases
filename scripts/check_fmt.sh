@@ -34,7 +34,7 @@ if ! check_cmd "magiskboot"; then
     install_magiskboot
 fi
 
-boot_path="$1"
+boot_path=$(realpath "$1")
 if [ -z "${boot_path:-}" ]; then
     err "boot.img required."
 elif [ ! -f "$boot_path" ]; then
@@ -47,8 +47,9 @@ temp=$(mktemp -d)
 pushd "$temp" >/dev/null || err "pushd failed"
 
 # Get boot format
-dst="$(basename -- "$boot_path")"
-cp "$boot_path" "$dst" || err "failed to copy '$boot_path'"
+dst="$temp/$(basename "$boot_path")"
+cp "$boot_path" "$dst"
+boot_path="$dst"
 
 output=$(magiskboot unpack "$boot_path" 2>&1)
 rc=$?
