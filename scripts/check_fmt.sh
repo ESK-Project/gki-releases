@@ -47,6 +47,10 @@ temp=$(mktemp -d)
 pushd "$temp" >/dev/null || err "pushd failed"
 
 # Get boot format
+dst="$temp/$(basename "$boot_path")"
+cp "$boot_path" "$dst"
+boot_path="$dst"
+
 output=$(magiskboot unpack "$boot_path" 2>&1)
 rc=$?
 
